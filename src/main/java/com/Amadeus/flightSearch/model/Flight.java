@@ -7,9 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 
 @Entity
@@ -31,9 +29,6 @@ public class Flight {
 
     @Column(name = "departure_time", nullable = false)
     private LocalDateTime departureTime;
-
-    @Column(name = "return_time")
-    private LocalDateTime returnTime;
 
     @Column(name = "price")
     private Double price;

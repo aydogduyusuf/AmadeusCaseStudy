@@ -1,6 +1,7 @@
 package com.Amadeus.flightSearch.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,6 +18,10 @@ public class Airport {
     @GeneratedValue
     @Column(name="id")
     private Long id;
+
+    @Size(min = 3, max = 3, message = "airport code must be 3 characters long")
+    @Column(name = "airport_code", nullable = false, unique = true)
+    private String code;
 
     @ManyToOne
     @JoinColumn(name = "city_id", nullable = false)
